@@ -1,6 +1,6 @@
 # dmoj-rust [![Travis CI](https://secure.travis-ci.org/DMOJ/dmoj-rust.svg?branch=master)](http://travis-ci.org/DMOJ/dmoj-rust)
 
-A Rust crate for providing helpful methods in online judging.
+A Rust crate for providing helpful methods in online judging. Cloned from [DMOJ Rust](https://github.com/DMOJ/dmoj-rust), this fork aims to create better usability of this library on Windows, as the original only supports Linux.
 
 - [Usage](#usage)
 - [Provided macros](#provided-macros)
