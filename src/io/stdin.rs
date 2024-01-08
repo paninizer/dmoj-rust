@@ -1,4 +1,4 @@
-use std::io::{Read, Result, Error};
+use std::{io::{Read, Result, Error}, convert::TryInto};
 use libc::{self, c_void, size_t};
 
 use sync::NotThreadSafe;
@@ -26,9 +26,9 @@ impl Read for Stdin {
     fn read(&mut self, buf: &mut [u8]) -> Result<usize> {
         let ret = unsafe {
             libc::read(
-                libc::STDIN_FILENO,
+                0, // libc::STDIN_FILENO
                 buf.as_mut_ptr() as *mut c_void,
-                buf.len() as size_t
+                (buf.len() as size_t).try_into().unwrap()
             )
         };
 
